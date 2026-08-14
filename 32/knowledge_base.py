@@ -13,6 +13,7 @@ from langchain_core.documents import Document
 
 # Streamlit Cloud中调用DashScope API Key
 os.environ["DASHSCOPE_API_KEY"] = st.secrets["DASHSCOPE_API_KEY"]
+st.write("API Key 读取成功:", st.secrets["DASHSCOPE_API_KEY"][:5] + "...")
 
 # 向量库持久化目录
 PERSIST_DIR = "./chroma_dbs"
