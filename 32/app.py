@@ -3,19 +3,6 @@ import os
 
 from knowledge_base import get_vectorstore, add_to_knowledge_base
 
-# 调试：先检查 st.secrets 是否存在该键
-try:
-    api_key = st.secrets["DASHSCOPE_API_KEY"]
-    st.write(f"🔑 从 secrets 读取到的 Key 前缀：{api_key[:5]}...，长度：{len(api_key)}")
-    # 去除可能的空白字符
-    api_key = api_key.strip()
-    os.environ["DASHSCOPE_API_KEY"] = api_key
-    st.success("✅ 环境变量设置成功")
-except KeyError as e:
-    st.error(f"❌ 未在 secrets 中找到键 'DASHSCOPE_API_KEY'，请检查大小写。错误：{e}")
-except Exception as e:
-    st.error(f"❌ 读取 secrets 时出错：{e}")
-
 # --- 页面配置 ---
 st.set_page_config(page_title="📚 动态知识库问答", layout="wide")
 st.title("📚 动态知识库问答系统")
