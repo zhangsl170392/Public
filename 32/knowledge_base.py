@@ -11,8 +11,11 @@ from langchain_community.vectorstores import Chroma
 
 from langchain_core.documents import Document
 
-from rag_qa import PERSIST_DIR
+# Streamlit Cloud中调用DashScope API Key
+os.environ["DASHSCOPE_API_KEY"] = st.secrets["DASHSCOPE_API_KEY"]
 
+# 向量库持久化目录
+PERSIST_DIR = "./chroma_dbs"
 COLLECTION_NAME = "dynamic_kb"
 EMBEDDING_MODEL = "qwen3.7-text-embedding"
 
