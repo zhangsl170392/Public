@@ -11,8 +11,9 @@ from langchain_community.vectorstores import Chroma
 
 from langchain_core.documents import Document
 
-from rag_qa import PERSIST_DIR
-
+#from rag_qa import PERSIST_DIR
+# 向量库持久化目录
+PERSIST_DIR = "./chroma_dbs"
 COLLECTION_NAME = "dynamic_kb"
 EMBEDDING_MODEL = "qwen3.7-text-embedding"
 
